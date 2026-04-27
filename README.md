@@ -2,9 +2,6 @@
 
 A privacy-first, offline-capable, mobile-first PWA that consolidates personal travel data, shows it on a timeline + map, detects gaps, and surfaces lowkey local recommendations.
 
-> **Status: M1–M4 + M7 complete. M5 (sync routes + E2E) and M6 (backup/restore UI) in progress.**
-> Design: [`ARCHITECTURE.md`](./ARCHITECTURE.md) · Work order: [`FILL_MANIFEST.md`](./FILL_MANIFEST.md)
-
 ## What it does
 
 - **Paste & Parse.** Drop a flight/hotel email in; get a structured event back (regex first, AI optional).
