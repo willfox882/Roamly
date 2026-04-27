@@ -1,0 +1,27 @@
+From: Airbnb <automated@airbnb.com>
+To: alex@example.com
+Subject: Booking confirmed — Cozy Lisbon Apartment
+
+Hi Alex,
+
+Your Airbnb reservation is confirmed!
+
+Confirmation code: HMXB4A7
+
+Property: Cozy Lisbon Apartment in Alfama
+Host: Maria S.
+
+Dates:       September 12 – 15, 2025
+Check-in:    September 12, 2025 (after 3:00 PM)
+Check-out:   September 15, 2025 (before 11:00 AM)
+Guests:      1
+
+Price breakdown:
+  3 nights × €85        €255.00
+  Airbnb service fee    €38.25
+  Total                 €293.25
+
+Your host's address will be shared 24 hours before check-in.
+
+Enjoy your stay!
+Airbnb

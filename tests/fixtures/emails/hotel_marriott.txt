@@ -1,0 +1,32 @@
+From: Marriott Bonvoy <reservations@marriott.com>
+To: alex@example.com
+Subject: Reservation Confirmed — JW Marriott Lisbon
+
+Dear Alex Test,
+
+Your reservation at JW Marriott Lisbon is confirmed.
+
+Confirmation Number: MARR2025882
+
+RESERVATION DETAILS
+-------------------
+Property:      JW Marriott Hotel Lisbon
+Address:       Av. José Malhoa, 1600-465 Lisboa, Portugal
+Check-in:      September 12, 2025
+Check-out:     September 15, 2025
+Duration:      3 nights
+Room Type:     Superior Room, 1 King Bed
+Guests:        1 adult
+
+RATE INFORMATION
+----------------
+Rate Plan:     Flexible Rate
+Nightly Rate:  EUR 220.00
+Total:         EUR 660.00 + taxes
+
+Check-in time is 3:00 PM. Check-out time is noon.
+
+Loyalty Number: 987654321
+
+Thank you,
+Marriott Bonvoy

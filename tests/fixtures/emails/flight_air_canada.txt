@@ -1,0 +1,31 @@
+From: Air Canada <no-reply@aircanada.com>
+To: alex@example.com
+Subject: Your booking confirmation — AC123
+
+Dear Alex Test,
+
+Thank you for choosing Air Canada. Your booking is confirmed.
+
+Booking Reference (PNR): ABC123
+
+FLIGHT DETAILS
+--------------
+Flight:        AC 123
+Route:         Vancouver (YVR) → Tokyo Narita (NRT)
+Date:          July 1, 2026
+Departure:     14:30 PDT (UTC-7)
+Arrival:       July 2, 2026 17:45 JST (UTC+9)
+
+Passenger:     Alex Test
+Seat:          24A (Economy)
+Fare Class:    Flex Economy
+
+IMPORTANT INFORMATION
+---------------------
+Please arrive at least 2 hours before departure.
+Check-in opens 24 hours prior to departure.
+
+Manage your booking at aircanada.com.
+
+Thank you,
+Air Canada

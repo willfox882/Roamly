@@ -1,0 +1,73 @@
+[
+  {
+    "path": "lib/crypto.ts",
+    "change_summary": "Implement AES-GCM encryption for cloud sync payload using Argon2/PBKDF2 derived key from a user passphrase.",
+    "acceptance_tests": [
+      "Test encryption/decryption roundtrip yields original data",
+      "Test incorrect passphrase throws decryption error"
+    ],
+    "estimated_hours": 6,
+    "priority": "P0"
+  },
+  {
+    "path": "app/api/sync/route.ts",
+    "change_summary": "Secure sync endpoints with JWT/Session auth and rate limiting. Ensure it only accepts encrypted blobs.",
+    "acceptance_tests": [
+      "Unauthenticated requests return 401",
+      "Rate limit exceeded returns 429",
+      "Valid sync payload updates remote dataVersion"
+    ],
+    "estimated_hours": 8,
+    "priority": "P0"
+  },
+  {
+    "path": "lib/gapDetector.ts",
+    "change_summary": "Enhance timezone handling for multi-leg flights crossing datelines. Ensure arrival nights are calculated based on local destination time.",
+    "acceptance_tests": [
+      "Flight crossing International Date Line correctly flags gap on arrival date",
+      "Same-day check-in and checkout does not trigger false gap"
+    ],
+    "estimated_hours": 4,
+    "priority": "P1"
+  },
+  {
+    "path": "app/components/ParsedReviewPanel.tsx",
+    "change_summary": "Add user consent modal for AI parsing prior to first use, storing consent in useUIStore.",
+    "acceptance_tests": [
+      "User must click 'Agree' before paste-parse works",
+      "Consent state is persisted across reloads"
+    ],
+    "estimated_hours": 3,
+    "priority": "P1"
+  },
+  {
+    "path": "public/sw.js",
+    "change_summary": "Implement BackgroundSync for offline edits, ensuring queued mutations (like Add Trip) sync when connectivity returns.",
+    "acceptance_tests": [
+      "Offline trip creation is queued",
+      "Trip syncs automatically upon regaining network connection"
+    ],
+    "estimated_hours": 6,
+    "priority": "P1"
+  },
+  {
+    "path": "app/api/events/parse/route.ts",
+    "change_summary": "Add robust error handling for Anthropic API timeouts and malformed JSON responses from the LLM.",
+    "acceptance_tests": [
+      "Timeout returns graceful 503 error",
+      "Malformed JSON triggers deterministic fallback parser"
+    ],
+    "estimated_hours": 3,
+    "priority": "P2"
+  },
+  {
+    "path": "capacitor.config.ts",
+    "change_summary": "Create Capacitor configuration for iOS App Store submission, including appId, bundled WebDir, and plugin configs.",
+    "acceptance_tests": [
+      "npx cap sync ios runs successfully",
+      "App builds in Xcode without missing configuration"
+    ],
+    "estimated_hours": 4,
+    "priority": "P2"
+  }
+]

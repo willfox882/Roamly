@@ -1,0 +1,119 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --safe-top:    env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+    --safe-left:   env(safe-area-inset-left);
+    --safe-right:  env(safe-area-inset-right);
+
+    /* Light Theme Variables */
+    --surface:       #E8ECF1;
+    --card:          #F2F5F9;
+    --ink:           #1C1C1E;
+    --muted:         #6B7280;
+    --subtle:        rgba(0, 0, 0, 0.06);
+    --shadow-dark:   #C8D0D9;
+    --shadow-light:  #FFFFFF;
+    --input-bg:      #FFFFFF;
+    --placeholder:   #9CA3AF;
+  }
+
+  .dark {
+    /* Dark Theme Variables */
+    --surface:       #0B1220;
+    --card:          #161D2B;
+    --ink:           #F2F5F9;
+    --muted:         #94A3B8;
+    --subtle:        rgba(255, 255, 255, 0.06);
+    --shadow-dark:   #000000;
+    --shadow-light:  #1E293B;
+    --input-bg:      #111827;
+    --placeholder:   #6B7280;
+  }
+
+  html,
+  body {
+    /* Base theme colors from variables */
+    background-color: var(--surface);
+    color: var(--ink);
+    @apply antialiased;
+    min-height: 100dvh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Focus ring uses primary on surface background */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+    ring-offset-color: var(--surface);
+  }
+}
+
+@layer components {
+  /*
+   * .glass — neumorphic raised card
+   * Dual shadow: dark side bottom-right, light side top-left.
+   * Used for cards, nav bar, header, modals.
+   */
+  .glass {
+    background-color: var(--card);
+    border: 1px solid var(--subtle);
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Inset variant for inputs and pressed states */
+  .glass-inset {
+    background-color: var(--input-bg);
+    border: 1px solid var(--subtle);
+    box-shadow: inset 2px 2px 5px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--placeholder);
+  }
+
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Force inputs to be white boxes with black text in both themes */
+  .roamly-input {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid rgba(0,0,0,0.12) !important;
+    border-radius: 8px !important;
+  }
+
+  .roamly-input::placeholder {
+    color: #666666 !important;
+  }
+
+  /* Ensure date inputs (type="date") also get same style */
+  input[type="date"].roamly-input,
+  .roamly-date-input {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Fix for date picker icon visibility on white background */
+  .dark .roamly-date-input::-webkit-calendar-picker-indicator,
+  .roamly-date-input::-webkit-calendar-picker-indicator {
+    filter: invert(0) !important;
+  }
+
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

@@ -1,0 +1,37 @@
+From: Air Canada <no-reply@aircanada.com>
+To: alex@example.com
+Subject: Your booking summary
+
+Dear Alex Test,
+
+Below is a summary of your upcoming trip to Lisbon.
+
+=======================================================
+FLIGHT BOOKING
+=======================================================
+
+Booking Reference (PNR): LIS789
+
+Flight:        AC 856
+Route:         Toronto (YYZ) → Lisbon (LIS)
+Date:          September 12, 2025
+Departure:     08:15 EDT (UTC-4)
+Arrival:       September 12, 2025 20:45 WEST (UTC+1)
+
+Passenger:     Alex Test
+Seat:          18C (Economy)
+
+=======================================================
+HOTEL BOOKING
+=======================================================
+
+Confirmation Number: HTL5599
+
+Property:      Marriott Lisbon
+Address:       Rua Rodrigo da Fonseca 2, Lisbon, Portugal
+Check-in:      September 12, 2025
+Check-out:     September 15, 2025
+Room Type:     Classic Double
+
+Have a great trip!
+Air Canada Travel & Stays

@@ -1,0 +1,31 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["app/*", "@/app/*"],
+            "message": "lib/ and server/ must not import from app/. See ARCHITECTURE.md §4."
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/consistent-type-imports": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["app/**/*.{ts,tsx}"],
+      "rules": { "no-restricted-imports": "off" }
+    },
+    {
+      "files": ["tests/**/*.{ts,tsx}"],
+      "rules": {
+        "no-restricted-imports": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
+}

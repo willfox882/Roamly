@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npm test *)",
+      "Bash(node -e \"const d = require\\('./lib/data/iata.json'\\); console.log\\('YYJ:', JSON.stringify\\(d['YYJ']\\)\\); console.log\\('YVR:', JSON.stringify\\(d['YVR']\\)\\); console.log\\('LAS:', JSON.stringify\\(d['LAS']\\)\\);\")",
+      "Bash(node -e \"const d = require\\('./lib/data/iata.json'\\); const bc = Object.entries\\(d\\).filter\\(\\([k,v]\\) => v.country === 'CA' && v.city && v.city.toLowerCase\\(\\).includes\\('victoria'\\)\\); console.log\\(bc\\);\")",
+      "Bash(node -e \"const d = require\\('./lib/data/iata.json'\\); console.log\\('Total entries:', Object.keys\\(d\\).length\\); const sample = Object.entries\\(d\\).slice\\(0,5\\); console.log\\(sample\\);\")",
+      "Bash(node -e \"const d = require\\('./lib/data/iata.json'\\); const keys = Object.keys\\(d\\).slice\\(0,10\\); console.log\\('Keys:', keys\\); console.log\\('YYC:', JSON.stringify\\(d['YYC']\\)\\);\")",
+      "Bash(npx jest *)",
+      "Bash(node -c public/sw.js)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Roamly — iOS Info.plist (template).
+
+  This file is a SEED for the Capacitor-generated Info.plist. It is committed
+  here on Windows so the privacy strings are version-controlled before the
+  iOS project is scaffolded on a Mac.
+
+  Workflow:
+    1. On a Mac, run `npx cap add ios` (per capacitor.config.ts notes).
+    2. Capacitor will create ios/App/App/Info.plist with its own defaults.
+    3. Diff that file against this one and merge the NS*UsageDescription keys
+       (and any ATS exceptions you choose to enable) into the scaffolded file.
+    4. Commit the merged result.
+
+  Notes:
+  - DO NOT change the bundle identifier here. CFBundleIdentifier is managed by
+    Xcode/Capacitor (it derives from `appId` in capacitor.config.ts).
+  - Camera usage is OPTIONAL — Roamly does not currently require it. The
+    NSCameraUsageDescription key below is commented out; uncomment only if a
+    feature actually invokes the camera (e.g. boarding-pass barcode scan).
+    Apple rejects builds that declare a usage string without using the API.
+  - ATS (App Transport Security) exceptions are commented out by default.
+    Production builds should keep ATS strict; only enable
+    NSAllowsLocalNetworking if you load a local LLM dev server over HTTP.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Roamly</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+
+	<!-- ─── Privacy: Location ─────────────────────────────────────────────
+	     Required because Roamly shows trips on a map and offers nearby-place
+	     recommendations. The string is shown verbatim in the iOS permission
+	     prompt; keep it short and benefit-oriented (Apple guideline). -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Roamly uses your location to center the trip map on where you are and to suggest nearby places to add to your itinerary. Your location never leaves your device unless you enable encrypted cloud sync.</string>
+
+	<!-- ─── Privacy: Camera (DISABLED until a feature actually uses it) ───
+	     Uncomment ONLY when a camera-using feature ships (e.g. boarding-pass
+	     scan). Apple rejects apps that declare unused usage descriptions.
+
+	<key>NSCameraUsageDescription</key>
+	<string>Roamly uses the camera to scan boarding passes and confirmation barcodes so you can import bookings without copy-pasting.</string>
+	-->
+
+	<!-- ─── App Transport Security ────────────────────────────────────────
+	     Production: leave ATS strict (no NSAppTransportSecurity dict).
+	     Dev only: uncomment NSAllowsLocalNetworking if you load a local LLM
+	     server over HTTP for development. NEVER ship NSAllowsArbitraryLoads.
+
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	-->
+</dict>
+</plist>
